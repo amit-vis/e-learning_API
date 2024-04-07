@@ -43,6 +43,9 @@ module.exports.updatePassword = async (req, res, next)=>{
         const user = await User.findOne({where:{email: getToken.email}})
         const password = req.body.password;
         const cpassword = req.body.cpassword;
+        if(password.length<6 ){
+            throw new errorHandler("password length must be 6 charcter!!", 405)
+        }
         if(password !== cpassword){
             throw new errorHandler("Password does not matched!!", 401)
         }

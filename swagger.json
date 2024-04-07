@@ -1,0 +1,659 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "API for E-Learning application",
+        "title": "E-Learning API"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:5500"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "JWT": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "paths": {
+        "/ask/user-chat": {
+            "post": {
+                "tags": [
+                    "chatAI"
+                ],
+                "summary": "Chat With AI",
+                "description": "User can solve the query chat AI",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "query": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Here is your answer"
+                    },
+                    "400": {
+                        "description": "Kindly write your query!!"
+                    }
+                }
+            }
+        },
+        "/ask/admin-chat": {
+            "post": {
+                "tags": [
+                    "chatAI"
+                ],
+                "summary": "Chat With AI",
+                "description": "User can solve the query chat AI",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "query": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Here is your answer"
+                    },
+                    "400": {
+                        "description": "Kindly write your query!!"
+                    }
+                }
+            }
+        },
+        "/course/create": {
+            "post": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Add Course",
+                "description": "Create the new course",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "category": {
+                                        "type": "string"
+                                    },
+                                    "level": {
+                                        "type": "string",
+                                        "enum": [
+                                            "beginner",
+                                            "intermediate",
+                                            "advanced"
+                                        ]
+                                    },
+                                    "popularity": {
+                                        "type": "number",
+                                        "format": "float"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Course has been created!!"
+                    },
+                    "400": {
+                        "description": "Same Name course is exist already!!"
+                    }
+                }
+            }
+        },
+        "/course/update/{id}": {
+            "put": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Update Course",
+                "description": "Update the course details",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "category": {
+                                        "type": "string"
+                                    },
+                                    "level": {
+                                        "type": "string",
+                                        "enum": [
+                                            "beginner",
+                                            "intermediate",
+                                            "advanced"
+                                        ]
+                                    },
+                                    "popularity": {
+                                        "type": "number",
+                                        "format": "float"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Course updated Successfully!!"
+                    },
+                    "400": {
+                        "description": "Course is does not exist or not found!!"
+                    }
+                }
+            }
+        },
+        "/course/delete/{id}": {
+            "delete": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "Delete Course",
+                "description": "Delete the course details",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Item Deleted successfully!!"
+                    },
+                    "400": {
+                        "description": "Course is does not exist or not found!!"
+                    }
+                }
+            }
+        },
+        "/course/viewcourse-admin": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "get Course",
+                "description": "Get all the Course",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Courses lists!!"
+                    },
+                    "400": {
+                        "description": "Course is does not exist or not found!!"
+                    }
+                }
+            }
+        },
+        "/course/viewcourse-user": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "get Course",
+                "description": "Get all the Course",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Courses lists!!"
+                    },
+                    "400": {
+                        "description": "Course is does not exist or not found!!"
+                    }
+                }
+            }
+        },
+        "/course/viewfilter-user": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "get Course",
+                "description": "Filter the Course",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Here is the filtered data!!"
+                    },
+                    "400": {
+                        "description": "Corses not found or does not exist!!"
+                    }
+                }
+            }
+        },
+        "/course/viewfilter-admin": {
+            "get": {
+                "tags": [
+                    "Course"
+                ],
+                "summary": "get Course",
+                "description": "Filter the Course",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Here is the filtered data!!"
+                    },
+                    "400": {
+                        "description": "Corses not found or does not exist!!"
+                    }
+                }
+            }
+        },
+        "/enroll/{id}": {
+            "post": {
+                "tags": [
+                    "Enrollment"
+                ],
+                "summary": "Enroll Course",
+                "description": "Enroll with the Course",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "You have successfully Enrolled the course!!"
+                    },
+                    "401": {
+                        "description": "You have already Enrolled in this course!!"
+                    }
+                }
+            }
+        },
+        "/enroll/view": {
+            "get": {
+                "tags": [
+                    "Enrollment"
+                ],
+                "summary": "get Enroll Course",
+                "description": "Get all the enroll with the course",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "check you enroll course!!"
+                    },
+                    "400": {
+                        "description": "Courses not found or you haven't enroll!!"
+                    }
+                }
+            }
+        },
+        "/enroll/delete/{courseId}": {
+            "delete": {
+                "tags": [
+                    "Enrollment"
+                ],
+                "summary": "Delete Enroll Course",
+                "description": "Remove enrolled course",
+                "security": [
+                    {
+                        "JWT": {}
+                    }
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "courseId",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "You have successfull remove this course from your enrollnment!!"
+                    },
+                    "400": {
+                        "description": "Course is does not exist or not available!!"
+                    }
+                }
+            }
+        },
+
+        "/token/create/{id}": {
+            "post": {
+                "tags": [
+                    "Token"
+                ],
+                "summary": "Create Token",
+                "description": "Create token to update the password!!",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Check your mail!!"
+                    }
+                }
+            }
+        },
+
+        "/token/set-password": {
+            "post": {
+                "tags": [
+                    "Token"
+                ],
+                "summary": "Reset-password",
+                "description": "Update the password",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "token": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "cpassword": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Password update successfully!!"
+                    },
+                    "401": {
+                        "description": "Password does not matched!!"
+                    },
+                    "403": {
+                        "description": "Token has been expired!!"
+                    },
+                    "405": {
+                        "description": "password length must be 6 charcter!!"
+                    }
+                }
+            }
+        },
+
+        "/user/create": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "SignUp",
+                "description": "Register new the User",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string"
+                                    },
+                                    "lastName": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "avatar": {
+                                        "type": "string"
+                                    },
+                                    "isSuperadmin": {
+                                        "type": "boolean",
+                                        "default": false
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "User Registered Successfully!!"
+                    },
+                    "400": {
+                        "description": "User Already Exist!!"
+                    },
+                    "401": {
+                        "description": "Missing Required fields in the request body!!"
+                    },
+                    "403": {
+                        "description": "password length must be 6 charcter!!"
+                    }
+                }
+            }
+        },
+
+        "/user/login": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Login",
+                "description": "User login to get token",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Incorrect Credentials"
+                    }
+                }
+            }
+        },
+
+        "/user/update/{id}": {
+            "put": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Update",
+                "description": "Update the User Profile",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string"
+                                    },
+                                    "lastName": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "avatar": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Details updated successfully!!"
+                    },
+                    "400": {
+                        "description": "This Email is already exist!!"
+                    },
+                    "401": {
+                        "description": "User Not Found or does not exist!!"
+                    }
+                }
+            }
+        },
+        "/user/view/{id}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "View Details",
+                "description": "Get the profile details",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User Profile Details!!"
+                    },
+                    "400": {
+                        "description": "User does not Exist!!"
+                    }
+                }
+            }
+        }
+    }
+}

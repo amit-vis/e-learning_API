@@ -5,7 +5,7 @@ module.exports.query = async (req, res, next) => {
     try {
         const { query } = req.body;
         if(!query){
-            throw new errorHandler("Kindly write your question!!", 400)
+            throw new errorHandler("Kindly write your query!!", 400)
         }
         const response = await anthropic.messages.create({
             model: 'claude-3-opus-20240229',

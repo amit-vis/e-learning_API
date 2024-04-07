@@ -1,16 +1,20 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
+const swagger = require('swagger-ui-express');
 const app = express();
 const port = 5500;
 const db = require('./config/database');
-const bodyParser = require('body-parser');
 const PassportJWT = require('./config/passport-jwt');
 const adminPassportJWT = require('./config/passport-jwt-admin');
-const fileUpload = require('express-fileupload');
 const logData = require('./config/logger').logData
 const {errorHandlerMiddleware} = require('./config/errorHandler');
-const {invalidRoutesHandlerMiddleware} = require('./config/invalidRoutesMiddleware')
+const {invalidRoutesHandlerMiddleware} = require('./config/invalidRoutesMiddleware');
+const apiDocs = require('./swagger.json');
 
 app.use(express.json())
+
+app.use('/api-docs', swagger.serve, swagger.setup(apiDocs))
 
 app.use(bodyParser.json());
 app.use(fileUpload({

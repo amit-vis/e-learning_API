@@ -26,6 +26,7 @@
     "passport-jwt": "^4.0.1",
     "pg": "^8.11.4",
     "sequelize": "^6.37.2",
+    "swagger-ui-express": "^5.0.0",
     "winston": "^3.13.0"
   }
 }
