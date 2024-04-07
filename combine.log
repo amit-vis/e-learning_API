@@ -46,3 +46,18 @@
 {"level":"info","requestBody":{"query":""},"requestURL":"/chat","timestamp":"Sun Apr 07 2024 19:45:21 GMT+0530 (India Standard Time)"}
 {"error message":"Kindly write your question!!","level":"error","request URL":"/chat","timestamp":"Sun Apr 07 2024 19:45:21 GMT+0530 (India Standard Time)"}
 {"level":"info","requestBody":{"query":"what is the HTML?"},"requestURL":"/ask/user-chat","timestamp":"Mon Apr 08 2024 00:02:07 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"email":"pathak@gmail.com","firstName":"fal","lastName":"guni"},"requestURL":"/user/update/12","timestamp":"Mon Apr 08 2024 01:57:42 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{},"requestURL":"/user/view/12","timestamp":"Mon Apr 08 2024 01:59:07 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{},"requestURL":"/user/view/13","timestamp":"Mon Apr 08 2024 01:59:24 GMT+0530 (India Standard Time)"}
+{"error message":"User does not Exist!!","level":"error","request URL":"/user/view/13","timestamp":"Mon Apr 08 2024 01:59:26 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{},"requestURL":"/token/create/12","timestamp":"Mon Apr 08 2024 02:00:44 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"cpassword":"123","password":"123","token":"d1f4e245d3cd34d38c6a43482ed5bf31797c145e"},"requestURL":"/token/set-password","timestamp":"Mon Apr 08 2024 02:01:45 GMT+0530 (India Standard Time)"}
+{"error message":"password length must be 6 charcter!!","level":"error","request URL":"/token/set-password","timestamp":"Mon Apr 08 2024 02:01:48 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"cpassword":"123","password":"123456","token":"d1f4e245d3cd34d38c6a43482ed5bf31797c145e"},"requestURL":"/token/set-password","timestamp":"Mon Apr 08 2024 02:01:58 GMT+0530 (India Standard Time)"}
+{"error message":"Password does not matched!!","level":"error","request URL":"/token/set-password","timestamp":"Mon Apr 08 2024 02:01:59 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"cpassword":"pathak","password":"pathak","token":"d1f4e245d3cd34d38c6a43482ed5bf31797c145e"},"requestURL":"/token/set-password","timestamp":"Mon Apr 08 2024 02:02:38 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"query":"tell me about sanam puri"},"requestURL":"/ask/user-chat","timestamp":"Mon Apr 08 2024 02:03:53 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"query":"about javascript"},"requestURL":"/ask/user-chat","timestamp":"Mon Apr 08 2024 02:07:35 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"query":"about javascript"},"requestURL":"/ask/user-chat","timestamp":"Mon Apr 08 2024 02:10:09 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"query":"tell me about python"},"requestURL":"/ask/admin-chat","timestamp":"Mon Apr 08 2024 02:10:48 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"query":"tell me about hadappa sbhyata"},"requestURL":"/ask/user-chat","timestamp":"Mon Apr 08 2024 02:12:37 GMT+0530 (India Standard Time)"}

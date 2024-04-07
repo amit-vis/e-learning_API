@@ -594,7 +594,7 @@
                 ],
                 "requestBody": {
                     "content": {
-                        "application/json": {
+                        "multipart/form-data": {
                             "schema": {
                                 "type": "object",
                                 "properties": {
@@ -607,8 +607,9 @@
                                     "email": {
                                         "type": "string"
                                     },
-                                    "avatar": {
-                                        "type": "string"
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
                                     }
                                 }
                             }

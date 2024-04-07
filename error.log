@@ -7,3 +7,6 @@
 {"error message":"Token has been expired!!","level":"error","request URL":"/token/set-password","timestamp":"Sun Apr 07 2024 15:46:08 GMT+0530 (India Standard Time)"}
 {"error message":"Invalid email or password!!","level":"error","request URL":"/user/login","timestamp":"Sun Apr 07 2024 15:53:08 GMT+0530 (India Standard Time)"}
 {"error message":"Kindly write your question!!","level":"error","request URL":"/chat","timestamp":"Sun Apr 07 2024 19:45:21 GMT+0530 (India Standard Time)"}
+{"error message":"User does not Exist!!","level":"error","request URL":"/user/view/13","timestamp":"Mon Apr 08 2024 01:59:26 GMT+0530 (India Standard Time)"}
+{"error message":"password length must be 6 charcter!!","level":"error","request URL":"/token/set-password","timestamp":"Mon Apr 08 2024 02:01:48 GMT+0530 (India Standard Time)"}
+{"error message":"Password does not matched!!","level":"error","request URL":"/token/set-password","timestamp":"Mon Apr 08 2024 02:01:59 GMT+0530 (India Standard Time)"}

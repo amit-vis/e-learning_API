@@ -12,7 +12,10 @@ const opts={
 // jwt authentication for user
 passport.use('user-jwt',new JWTStratergy(opts, async (jwt_payload, done)=>{
     try {
-        const user = await User.findByPk(jwt_payload.id);
+        const user = await User.findOne({where:{
+            id: jwt_payload.id,
+            isSuperadmin: false
+        }});
         if(user){
             return done(null, user)
         }else{
