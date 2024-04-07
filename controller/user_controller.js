@@ -6,6 +6,7 @@ require('dotenv').config();
 const {RegistartionNoty} = require('../config/mailers');
 const {errorHandler} = require('../config/errorHandler')
 
+// get the user details
 module.exports.view = async (req, res, next)=>{
     try {
         const getUserData = await User.findByPk(req.params.id,{
@@ -25,6 +26,7 @@ module.exports.view = async (req, res, next)=>{
     }
 }
 
+// Register the new User
 module.exports.create = async (req, res, next)=>{
     try {
         const {email, firstName, lastName, password, isSuperadmin} = req.body;
@@ -62,6 +64,7 @@ module.exports.create = async (req, res, next)=>{
     }
 }
 
+// login the user to get token
 module.exports.login = async (req, res, next)=>{
     try {
         const {email, password} = req.body;

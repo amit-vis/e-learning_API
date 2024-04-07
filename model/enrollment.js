@@ -3,6 +3,7 @@ const sequelize = require('../config/database');
 const Courses = require('./courses'); // Assuming this is your Courses model file
 const User = require('./user'); // Assuming this is your User model file
 
+// Enrollment schema
 const Enrollment = sequelize.define('Enrollment', {
     userId: {
         type: DataTypes.INTEGER,

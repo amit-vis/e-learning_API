@@ -5,7 +5,7 @@ const {resetPassword} = require('../config/mailers');
 const bcrypt = require('bcrypt');
 const {errorHandler} = require('../config/errorHandler')
 
-
+// create the token
 module.exports.create = async (req, res, next)=>{
     try {
         const findUser = await User.findByPk(req.params.id);
@@ -29,6 +29,7 @@ module.exports.create = async (req, res, next)=>{
     }
 }
 
+// set the new password
 module.exports.updatePassword = async (req, res, next)=>{
     try {
         const getToken = await Token.findOne({where:{token: req.body.token}});

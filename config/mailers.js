@@ -2,6 +2,7 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
+// setip the transporter
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smpt.gmail.com',
@@ -13,6 +14,7 @@ let transporter = nodemailer.createTransport({
     }
 })
 
+// send the mail from transporter 
 const sendMail = async (subject, to, template) => {
     try {
         const Mailcontent = await transporter.sendMail({
@@ -28,6 +30,7 @@ const sendMail = async (subject, to, template) => {
     }
 }
 
+// template for Enrollenment mail notification
 module.exports.EnrollenmentNotify = async (userEmail, userName, courseTitle) => {
     const subject = 'Enrollenment Confirmation!!';
     const content = `<div>
@@ -49,6 +52,7 @@ module.exports.EnrollenmentNotify = async (userEmail, userName, courseTitle) => 
     }
 }
 
+// template for new User registration mail notification
 module.exports.RegistartionNoty = async (userName, userEmail) => {
     try {
         const subject = "Registartion Confirmation!!";
@@ -70,6 +74,7 @@ module.exports.RegistartionNoty = async (userName, userEmail) => {
     }
 }
 
+// template for send the token to the user
 module.exports.resetPassword = async (userName, userEmail, token) => {
     try {
         const subject = 'Reset Password!!';

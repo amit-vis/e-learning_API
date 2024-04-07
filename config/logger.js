@@ -1,5 +1,6 @@
 const winston = require('winston');
 
+// implimented the winston to get the log
 const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
@@ -9,6 +10,7 @@ const logger = winston.createLogger({
     ],
 });
 
+// here we create the lodata
 const logData = (req, res, next) => {
     if (!req.url.includes('/user/login') && !req.url.includes('/user/create')) {
         logger.log({

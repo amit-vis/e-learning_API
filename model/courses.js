@@ -1,6 +1,7 @@
 const {DataTypes} = require('sequelize');
 const sequelize = require('../config/database');
 
+// course schema
 const Courses = sequelize.define('Courses',{
     title:{
         type: DataTypes.STRING,

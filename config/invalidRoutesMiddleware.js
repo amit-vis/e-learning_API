@@ -1,3 +1,4 @@
+// Invalid route error
 module.exports.invalidRoutesHandlerMiddleware = (req, res, next)=>{
     res
         .status(404)

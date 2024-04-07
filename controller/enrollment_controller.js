@@ -4,6 +4,7 @@ const Enrollment = require('../model/enrollment');
 const {EnrollenmentNotify } = require('../config/mailers');
 const {errorHandler} = require('../config/errorHandler')
 
+// code for enrolled the new course
 module.exports.create = async (req, res, next)=>{
     try {
         const findCourse = await Courses.findByPk(req.params.id);
@@ -29,6 +30,7 @@ module.exports.create = async (req, res, next)=>{
     }
 }
 
+// code view all the enrolled courses
 module.exports.view = async (req, res, next)=>{
     try {
         const checkEnrollCourse = await User.findByPk(req.user.id,{
@@ -54,6 +56,7 @@ module.exports.view = async (req, res, next)=>{
     }
 }
 
+// remove the enrolled courses
 module.exports.removeFromEnrollnment = async (req, res, next)=>{
     try {
         const findCourse = await Enrollment.findOne({where:{

@@ -1,5 +1,6 @@
 const {logger} = require('./logger');
 
+// class for handle the error
 class errorHandler extends Error{
     constructor(message, statusCode){
         super(message);
@@ -7,6 +8,7 @@ class errorHandler extends Error{
     }
 }
 
+// middle ware to store the error log or throw the error
 const errorHandlerMiddleware = (err, req, res, next)=>{
     if(err instanceof errorHandler){
         logger.log({

@@ -1,6 +1,7 @@
 const anthropic = require('../config/chatAi');
 const { errorHandler } = require('../config/errorHandler');
 
+// code for ask a query with the AI
 module.exports.query = async (req, res, next) => {
     try {
         const { query } = req.body;

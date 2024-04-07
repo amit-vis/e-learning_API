@@ -9,6 +9,7 @@ const opts={
     secretOrKey: process.env.SECRET_KEY
 }
 
+// jwt authentication for user
 passport.use('user-jwt',new JWTStratergy(opts, async (jwt_payload, done)=>{
     try {
         const user = await User.findByPk(jwt_payload.id);

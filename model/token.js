@@ -1,6 +1,7 @@
 const {DataTypes} = require('sequelize');
 const sequelize = require('../config/database');
 
+// token schema
 const Token = sequelize.define('Token',{
     email:{
         type: DataTypes.STRING,

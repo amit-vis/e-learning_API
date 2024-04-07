@@ -2,6 +2,7 @@ const Courses = require('../model/courses');
 const {Op} = require('sequelize');
 const {errorHandler} = require('../config/errorHandler')
 
+// code for add new course
 module.exports.create = async (req, res, next)=>{
     try {
         if(!req.user || req.user.isSuperadmin===false){
@@ -27,6 +28,7 @@ module.exports.create = async (req, res, next)=>{
     }
 }
 
+// code for update new course
 module.exports.update = async (req, res, next)=>{
     try {
         if(!req.user || req.user.isSuperadmin===false){
@@ -51,6 +53,7 @@ module.exports.update = async (req, res, next)=>{
     }
 }
 
+// code for delete the course
 module.exports.delete = async (req, res, next)=>{
     try {
         if(!req.user || req.user.isSuperadmin===false){
@@ -71,6 +74,7 @@ module.exports.delete = async (req, res, next)=>{
     }
 }
 
+// code for get the course details
 module.exports.viewCourse = async (req, res, next)=>{
     try {
         const page = req.query.page? parseInt(req.query.page):1;
@@ -97,6 +101,7 @@ module.exports.viewCourse = async (req, res, next)=>{
     }
 }
 
+// code for filtered the course details
 module.exports.filteredData = async (req, res, next)=>{
     try {
         let {page = 1, limit=2, category, level, popularity} = req.query;
