@@ -61,3 +61,4 @@
 {"level":"info","requestBody":{"query":"about javascript"},"requestURL":"/ask/user-chat","timestamp":"Mon Apr 08 2024 02:10:09 GMT+0530 (India Standard Time)"}
 {"level":"info","requestBody":{"query":"tell me about python"},"requestURL":"/ask/admin-chat","timestamp":"Mon Apr 08 2024 02:10:48 GMT+0530 (India Standard Time)"}
 {"level":"info","requestBody":{"query":"tell me about hadappa sbhyata"},"requestURL":"/ask/user-chat","timestamp":"Mon Apr 08 2024 02:12:37 GMT+0530 (India Standard Time)"}
+{"level":"info","requestBody":{"email":"pathak@gmail.com","firstName":"falguni","lastName":"pahak"},"requestURL":"/user/update/12","timestamp":"Mon Apr 08 2024 02:17:49 GMT+0530 (India Standard Time)"}
